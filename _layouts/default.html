@@ -1,7 +1,5 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: "en-UK" }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,6 +33,17 @@
         </div>
         <span class="blc"></span><span class="trc"></span>
         </div>
+        <nav class="navbar">
+          <div class="container">
+            <ul>
+              {% for link in site.data.navigation.main %}
+              <li>
+                <a class="navbar-brand" href="{{ link.url | relative_url }}" {% if link.url == page.url %}class="active"{% endif %}>{{ link.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </nav>
         <article class="markdown-body">
           {{ content }}
         </article>
